@@ -106,17 +106,18 @@ let string_of_player: (player) => string = player =>
 
 let string_of_point: (point) => string = point =>
     switch point {
-    | Love => "love"
-    | Fifteen => "fifteen"
-    | Thirty => "thirty"
+    | Love => "0"
+    | Fifteen => "15"
+    | Thirty => "30"
     };
 
 let string_of_score: (score) => string = score =>
     switch score {
-    | Points(pointsData) => "points " ++ string_of_point(pointsData.playerOne)
-    | Forty(fortyData) => "points "
-    | Deuce => "points "
-    | Advantage(player) => "points "
-    | Game(player) => "points "
+    | Points(pointsData) => string_of_player(PlayerOne) ++ " " ++ string_of_point(pointsData.playerOne) ++ "|" ++ string_of_point(pointsData.playerTwo) ++ " " ++ string_of_player(PlayerTwo)
+    | Forty(fortyData) => string_of_player(fortyData.player) ++ " 40|" ++ string_of_point(fortyData.otherPlayerPoint) ++ " " 
+    ++ string_of_player(other(fortyData.player))
+    | Deuce => string_of_player(PlayerOne) ++ " 40|40 " ++ string_of_player(PlayerTwo)
+    | Advantage(player) => "Advantage " ++ string_of_player(player)
+    | Game(player) => string_of_player(player) ++ " wins"
     };
 // Questions

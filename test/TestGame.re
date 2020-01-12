@@ -133,7 +133,7 @@ describe("Test questions", ({test}) => {
       ({expect}) => {
       expect.equal(
         string_of_point(Fifteen),
-        "fifteen"
+        "15"
       );
     });
     test(
@@ -141,16 +141,8 @@ describe("Test questions", ({test}) => {
       ({expect}) => {
       expect.equal(
         string_of_point(Thirty),
-        "thirty"
+        "30"
       );
     });
 
-    test(
-      "Score name is ",
-      ({expect}) => {
-      expect.equal(
-        string_of_score(Point({playerTwo: 1, playerOne: 1})),
-        "thirty"
-      );
-    });
 });

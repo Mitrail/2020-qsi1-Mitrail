@@ -125,7 +125,7 @@ describe("Test questions", ({test}) => {
       ({expect}) => {
       expect.equal(
         string_of_point(Love),
-        "love"
+        "0"
       );
     });
     test(
